@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hiển Thị Thời Gian</string>
+    <string name="title_activity_main">Hiển Thị Thời Gian</string>
+    <string name="package_name">com.example.timeapp</string>
+    <string name="custom_url_scheme">com.example.timeapp</string>
+</resources>

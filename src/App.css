@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+/* Font và màu sắc chính */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4cc9f0;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset và base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Layout chính */
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng pulse khi nhấn nút */
+.pulse-effect {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.header-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* Hiển thị thời gian */
+.time-display {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.time-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+/* Nhóm nút */
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+button {
+  border: none;
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.button-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.time-button {
+  background-color: #4cc9f0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.notify-button {
+  background-color: #f72585;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.share-button {
+  background-color: #4895ef;
+  color: white;
+}
+
+.screenshot-button {
+  background-color: #3a0ca3;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app {
+    padding: 1.5rem;
+    border-radius: 0;
+    min-height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .button-group {
+    grid-template-columns: 1fr;
   }
 }
